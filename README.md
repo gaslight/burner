@@ -1,9 +1,7 @@
-smeagol
+burner
 =======
 
-[smeagol][smeagol] is this ugly dude who led some hobbits around, this is kinda the same thing.  Except, like, instead of hiking mordor you're trying to write some open source code on a mac.
-
-FWIW it was easier to just write bash for this at first.  Over time I've enjoyed maintaining this with chef more than I think I would've enjoyed straight up shell.
+[burner][burner] is the way to get your Mac ready for action. It's really a fork of Cinderella with fewer things.
 
 What it does
 ============
@@ -29,7 +27,7 @@ Running
       GITHUB_TOKEN="..." \
       EMAIL="tyler@paperstreetsoap.com" \
       FULLNAME="Tyler Durden" \
-      rake smeagol:install
+      rake burner:install
 
 Disabling Services
 ==================
@@ -57,7 +55,6 @@ enable/disable the services that are installed by default.
 [python]: http://www.python.org
 [mongodb]: http://www.mongodb.org/
 [node.js]: http://nodejs.org
-[smeagol]: http://en.wikipedia.org/wiki/Gollum
 [homebrew]: http://github.com/mxcl/homebrew
 [memcached]: http://memcached.org/
 [cinderella]: http://ciderapp.org
