@@ -1,0 +1,38 @@
+SMEAGOL_ROOT_DIR=<%= @root %>; export SMEAGOL_ROOT_DIR
+PATH="$SMEAGOL_ROOT_DIR/bin:$SMEAGOL_ROOT_DIR/Cellar/python/2.7.1/bin:$SMEAGOL_ROOT_DIR/share/python:$SMEAGOL_ROOT_DIR/sbin:$PATH"; export PATH
+PATH="$SMEAGOL_ROOT_DIR/.rbenv/bin:$PATH"; export PATH
+MANPATH="$SMEAGOL_ROOT_DIR/share/man:/opt/X11/share/man:$MANPATH"; export MANPATH
+CFLAGS="-I$SMEAGOL_ROOT_DIR/include -I/opt/X11/include"; export CFLAGS
+CPPFLAGS="$CFLAGS"; export CPPFLAGS
+CXXFLAGS="$CFLAGS"; export CXXFLAGS
+LDFLAGS="-L$SMEAGOL_ROOT_DIR/lib -L/opt/X11/lib"; export LDFLAGS
+HOMEBREW_TEMP="$SMEAGOL_ROOT_DIR/tmp"; export HOMEBREW_TEMP
+RBENV_ROOT="$SMEAGOL_ROOT_DIR/.rbenv"; export RBENV_ROOT
+
+export CONFIGURE_ARGS="--with-cflags='$CFLAGS' --with-ldflags='$LDFLAGS'"
+
+if [[ -s $SMEAGOL_ROOT_DIR/.rvm/scripts/rvm ]] ; then
+  source $SMEAGOL_ROOT_DIR/.rvm/scripts/rvm
+fi
+
+if [[ -d $SMEAGOL_ROOT_DIR/Cellar/python/2.7/bin ]]; then
+  export PATH=~/Developer/Cellar/python/2.7/bin:$PATH
+fi
+
+if [[ -f $SMEAGOL_ROOT_DIR/.nvm/nvm.sh ]]; then
+  source $SMEAGOL_ROOT_DIR/.nvm/nvm.sh
+fi
+
+if [[ -x $SMEAGOL_ROOT_DIR/bin/rbenv ]]; then
+  eval "$(rbenv init -)"
+fi
+
+if [[ -f <%= @home %>/.cinderella.profile.custom ]]; then
+  source ~/.cinderella.profile.custom
+fi
+
+if [ "$SHELL" = "/bin/bash" ]; then
+  if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+  fi
+fi
